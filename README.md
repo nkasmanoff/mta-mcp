@@ -46,4 +46,4 @@ The next express southbound trains arriving at 14th St-Union Sq are:
 There are also local 6 trains arriving, the next one is at 15:46:27.
 ```
 
-Created by (Jonathan Allen)[https://github.com/jonathanallen44] and (Noah Kasmanoff)[https://github.com/nkamanoff]
+Created by [Jonathan Allen](https://github.com/jonathanallen44) and [Noah Kasmanoff](https://github.com/nkamanoff)
