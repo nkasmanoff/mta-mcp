@@ -12,7 +12,7 @@ from typing import Any
 # import httpx # This import is no longer used.
 from mcp.server.fastmcp import FastMCP
 from nyct_gtfs import NYCTFeed
-
+from datetime import datetime
 
 # Initialize FastMCP server
 mcp = FastMCP("mta_subway_tracker")
@@ -79,7 +79,8 @@ async def get_next_mta_train(
         return f"No train data found for feed ID {feed_id}."
 
     train_info_processed = get_train_info_list(trains_data)
-    train_info_string = ""
+    current_time = datetime.now().strftime("%H:%M:%S")
+    train_info_string = f"Current time: {current_time}\n"
     for train in train_info_processed:
         for stop in train["stop_time_updates"]:
             if (
