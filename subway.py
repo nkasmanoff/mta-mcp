@@ -1,12 +1,3 @@
-"""
-This is a simple MCP server that provides information about the next train arrival at a given station and direction.
-
-
-- Next steps:
-- Integrate location?
-- More testing with different lines and spelling issues
-"""
-
 from typing import Any
 
 # import httpx # This import is no longer used.
@@ -51,25 +42,23 @@ async def get_next_mta_train(
 
     Args:
         target_station: The name of the target station (e.g., "Times Sq-42 St", "14 St-Union Sq").
-        target_direction: The direction of the train ("N" for Northbound, "S" for Southbound).
+        target_direction: The direction of the train ("N" for Northbound / Uptown, "S" for Southbound / Downtown).
         feed_id: The GTFS feed ID for the subway lines (e.g., "1" for 1,2,3,4,5,6,S lines).
-                 Common feed IDs:
-                 "1": 1, 2, 3, 4, 5, 6, S (42 St Shuttle)
-                 "26": A, C, E, H (Rockaway Shuttle), S (Franklin Ave Shuttle)
-                 "16": N, Q, R, W
-                 "21": B, D, F, M
-                 "2": L
-                 "11": G
-                 "31": J, Z
-                 "36": 7
-                 "51": Staten Island Railway
+                 Common Feed IDs:
+                 "1": 1, 2, 3, 4, 5, 6, 7, S (42 St Shuttle)
+                 "A": A, C, E, S (Rockaway Shuttle)
+                 "N": N, Q, R, W
+                 "B": B, D, F, M, S (Frankin Ave)
+                 "L": L
+                 "G": G
+                 "J": J, Z
+                 "7": 7
+                 "SIR": Staten Island Railway
 
+    This function returns a string with the next train arrival information for the given station and direction.
+    You can use this tool to get the next train arrival information for a given station and direction.
     """
     try:
-        # It's better to run blocking I/O in a separate thread for async compatibility
-        # However, NYCTFeed itself might not be async. If issues arise, this part might need
-        # to be wrapped with something like asyncio.to_thread in Python 3.9+
-        # For now, assuming it's acceptable for the MCP tool context.
         feed = NYCTFeed(feed_id)
         trains_data = feed.trips
     except Exception as e:
