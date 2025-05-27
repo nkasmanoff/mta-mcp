@@ -9,6 +9,8 @@ This is a simple MCP server that provides information about the next train arriv
 
 ## How to run
 
+To get started I followed the instructions in the [MCP documentation](https://github.com/modelcontextprotocol/python-sdk).
+
 ```bash
 uv run subway.py
 ```
