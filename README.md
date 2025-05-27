@@ -1,6 +1,6 @@
 # MTA MCP Server
 
-This is a simple MCP server that provides information about the next train arrival at a given station and direction.
+This is a simple model context protocol (MCP) server that provides information about the next train arrival at a given station and direction using New York City's MTA subway system.
 
 ## Next steps:
 
@@ -9,7 +9,7 @@ This is a simple MCP server that provides information about the next train arriv
 
 ## How to run
 
-To get started I followed the instructions in the [MCP documentation](https://github.com/modelcontextprotocol/python-sdk).
+To get started please follow the instructions in the [MCP documentation](https://github.com/modelcontextprotocol/python-sdk).
 
 ```bash
 uv run subway.py
